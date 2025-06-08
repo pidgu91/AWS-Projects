@@ -1,11 +1,11 @@
 ## 🚨Make sure you're in us-east-1 region when creating certificate 🚨
 
 # Table of Contents:
-1. [Introduction](#introduction)
-2. [S3](#s3)
-3. [R53](#r53)
-4. [CloudFront](#cloudfront)
-5. [Final thoughts](#final-thoughts)
+- [Introduction](#introduction)
+- [S3](#s3)
+- [R53](#r53)
+- [CloudFront](#cloudfront)
+- [Final thoughts](#final-thoughts)
 
 ## Introduction
 Project helps to understand the connection between a S3 origin by making a static website and CloudFront. You can find the infrastructure diagram listed in the same folder as the write-up. This project will most likely be expanded on when knowledge of other AWS services are introduced into my learning. 
