@@ -1,4 +1,4 @@
-## 🚨Make sure you're in us-east-1 region when creating certificate 🚨
+## 🚨Certificate in ACM needs to be created in the region that you're deploying resources for this lab 🚨
 
 # Table of Contents:
 - [Introduction](#introduction)
@@ -100,4 +100,4 @@ Notice the CNAME record and the acm-validations.aws value
 8. Go to your website using registered domain
 
 ## Final thoughts
-You need to be in us-east-1 when creating a certificate, otherwise this doesn't work. My first walk-through of this, I forgot the "Alternate Domain Name" when setting up CloudFront, so it would never connect using my registered domain name. Since CloudFront caches the data on the edge location, trying to update my website and see the changes, doesn't happen real time. I have to run an "Invalidation" on everything in the bucket so it clears out the cache. I could work around this by renaming the index.html to index<version_Number>.html, but then I'm having to change the default object each time. Since I'm using CloudFront, I don't think there is a good way of updating content - what I could do is lower the TTL of the cache and have it update more often than the default of 24 hours. 
+You need to create the certificate in the region that you're deploying your resources otherwise it won't work. My first walk-through of this, I forgot the "Alternate Domain Name" when setting up CloudFront, so it would never connect using my registered domain name. Since CloudFront caches the data on the edge location, trying to update my website and see the changes, doesn't happen real time. I have to run an "Invalidation" on everything in the bucket so it clears out the cache. I could work around this by renaming the index.html to index<version_Number>.html, but then I'm having to change the default object each time. Since I'm using CloudFront, I don't think there is a good way of updating content - what I could do is lower the TTL of the cache and have it update more often than the default of 24 hours. 
