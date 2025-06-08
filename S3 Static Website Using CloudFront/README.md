@@ -8,7 +8,12 @@
 - [Final thoughts](#final-thoughts)
 
 ## Introduction
-Project helps to understand the connection between a S3 origin by making a static website and CloudFront. You can find the infrastructure diagram listed in the same folder as the write-up. This project will most likely be expanded on when knowledge of other AWS services are introduced into my learning. 
+Project helps to understand the connection between a S3 origin by making a static website and CloudFront. This project will most likely be expanded on when knowledge of other AWS services are introduced into my learning. 
+
+
+![image](https://github.com/user-attachments/assets/4d89104e-d17b-4dc4-bb3b-2b261a8e4caf)
+
+
 
 ## S3
 1. Create bucket with globally unique name - in this case I set it to be of website-zacharyjanssen.com (registered domain name)
