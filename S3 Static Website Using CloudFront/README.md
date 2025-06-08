@@ -1,4 +1,4 @@
-## 🚨Certificate in ACM needs to be created in the region that you're deploying resources for this lab 🚨
+## 🚨Certificate in ACM needs to be created in us-east-1 🚨
 
 # Table of Contents:
 - [Introduction](#introduction)
