@@ -46,11 +46,34 @@ Project helps to understand the connection between a S3 origin by making a stati
 2. Under Origin, choose orgiin > select the s3 bucket
 3. For Origin access, we selected "Origin access control settings" This was selected because we only want CloudFront to be able to access the contents of the S3 bucket
 and not have users to access the bucket directly. Create new OAC > change nothing > create
-4. A bucket policy will need to be created to allow CloudFront to access S3 objects -
-5. Viewer Protocol Policy, select Redirect HTTP to HTTPS
-6. For "Alternate domain name (CNAME) we want to add an item and put our registered domain name - zacharyjanssen.com
-7. Next we need a Custom SSL certificate since this is for a custom domain name
-8. Request certificate, choose public certificate and in the FQDN type in the registered domain name
+4. A bucket policy will need to be created to allow CloudFront to access S3 objects
+5. Delete out the old S3 bucket policy and add the one below:
+```
+   {
+    "Version": "2008-10-17",
+    "Id": "PolicyForCloudFrontPrivateContent",
+    "Statement": [
+        {
+            "Sid": "AllowCloudFrontServicePrincipal",
+            "Effect": "Allow",
+            "Principal": {
+                "Service": "cloudfront.amazonaws.com"
+            },
+            "Action": "s3:GetObject",
+            "Resource": "arn:aws:s3:::cfands3-top10cats-k4fh13v5ozfv/*",
+            "Condition": {
+                "StringEquals": {
+                    "AWS:SourceArn": "arn:aws:cloudfront::502268561220:distribution/EG8ANTQKNNWS0"
+                }
+            }
+        }
+    ]
+}
+```
+6. Viewer Protocol Policy, select Redirect HTTP to HTTPS
+7. For "Alternate domain name (CNAME) we want to add an item and put our registered domain name - zacharyjanssen.com
+8. Next we need a Custom SSL certificate since this is for a custom domain name
+9. Request certificate, choose public certificate and in the FQDN type in the registered domain name
 
 ![image](https://github.com/user-attachments/assets/723d34de-c0fb-416f-ab41-e038a33977cb)
 
