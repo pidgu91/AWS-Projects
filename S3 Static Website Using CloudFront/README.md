@@ -69,7 +69,7 @@ and not have users to access the bucket directly. Create new OAC > change nothin
             "Resource": "arn:aws:s3:::cfands3-top10cats-k4fh13v5ozfv/*",
             "Condition": {
                 "StringEquals": {
-                    "AWS:SourceArn": "arn:aws:cloudfront::502268561220:distribution/EG8ANTQKNNWS0"
+                    "AWS:SourceArn": "arn:aws:cloudfront::<youraccountid>:distribution/EG8ANTQKNNWS0"
                 }
             }
         }
